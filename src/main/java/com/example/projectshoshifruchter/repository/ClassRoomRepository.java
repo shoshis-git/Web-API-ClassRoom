@@ -1,0 +1,15 @@
+//78/package com.example.projectshoshifruchter.repository;
+
+import com.example.projectshoshifruchter.entities.ClassRoom;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ClassRoomRepository extends CrudRepository<ClassRoom,Integer> {
+
+    ClassRoom findByName(char kita);
+    @Query("select k1 from ClassRoom where k1.name like ")
+
+
+}
