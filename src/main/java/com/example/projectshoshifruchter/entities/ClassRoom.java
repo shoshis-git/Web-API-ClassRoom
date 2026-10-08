@@ -1,14 +1,20 @@
 package com.example.projectshoshifruchter.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class ClassRoom {
 
-    int roomNumber;
-    char classNumber;
-    String teacher;
-    int amountPupil;
+    @Id
+    private int roomNumber;
+    private char classNumber;
+    private String teacher;
+    private int amountPupil;
 
+    // no-arg constructor נדרש על ידי JPA/Hibernate
+    public ClassRoom() {}
 
     public ClassRoom(int roomNumber, char classNumber, String teacher, int amountPupil) {
         this.roomNumber = roomNumber;
@@ -54,7 +60,10 @@ public class ClassRoom {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ClassRoom classRoom = (ClassRoom) o;
-        return roomNumber == classRoom.roomNumber && classNumber == classRoom.classNumber && amountPupil == classRoom.amountPupil && Objects.equals(teacher, classRoom.teacher);
+        return roomNumber == classRoom.roomNumber
+                && classNumber == classRoom.classNumber
+                && amountPupil == classRoom.amountPupil
+                && Objects.equals(teacher, classRoom.teacher);
     }
 
     @Override
