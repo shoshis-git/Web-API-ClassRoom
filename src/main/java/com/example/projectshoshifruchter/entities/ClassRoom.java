@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import java.util.Objects;
 
+/**
+ * ה-Entity — מייצגת שורה בטבלת ClassRoom ב-DB.
+ * לא נחשפת החוצה ישירות; ה-Controller והלקוח עובדים רק עם DTO.
+ */
 @Entity
 public class ClassRoom {
 
@@ -23,37 +27,17 @@ public class ClassRoom {
         this.amountPupil = amountPupil;
     }
 
-    public int getRoomNumber() {
-        return roomNumber;
-    }
+    public int getRoomNumber() { return roomNumber; }
+    public void setRoomNumber(int roomNumber) { this.roomNumber = roomNumber; }
 
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
-    }
+    public char getClassNumber() { return classNumber; }
+    public void setClassNumber(char classNumber) { this.classNumber = classNumber; }
 
-    public char getClassNumber() {
-        return classNumber;
-    }
+    public String getTeacher() { return teacher; }
+    public void setTeacher(String teacher) { this.teacher = teacher; }
 
-    public void setClassNumber(char classNumber) {
-        this.classNumber = classNumber;
-    }
-
-    public String getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
-    }
-
-    public int getAmountPupil() {
-        return amountPupil;
-    }
-
-    public void setAmountPupil(int amountPupil) {
-        this.amountPupil = amountPupil;
-    }
+    public int getAmountPupil() { return amountPupil; }
+    public void setAmountPupil(int amountPupil) { this.amountPupil = amountPupil; }
 
     @Override
     public boolean equals(Object o) {
